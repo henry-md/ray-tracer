@@ -12,7 +12,7 @@ using namespace std;
 // Camera //
 ////////////
 
-// ./Assignment2 --in Static3D/_dog.ray --out Static3D/aaa.jpg
+// ./RayTracer --in Static3D/_dog.ray --out Static3D/aaa.jpg
 
 
 // Generate Util::Ray3Ds from the camera's position through (i,j)-th pixel of a widthxheight view plane.

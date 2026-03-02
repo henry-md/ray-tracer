@@ -1,6 +1,6 @@
-TARGET = Assignment1
-DEPENDENDENT_DIRS = Image Util
-SOURCE = main1.cpp
+TARGET = ImageProcessor
+DEPENDENT_DIRS = Image Util
+SOURCE = image_processor.cpp
 
 CFLAGS += -I. -I.. -std=c++14 -Wunused-result
 LFLAGS += -L. -lUtil -lImage -ljpeg
@@ -37,7 +37,7 @@ debug: $(BIN)$(TARGET)
 clean:
 	rm -f $(BIN)$(TARGET)
 	rm -f $(OBJECTS)
-	for dir in $(DEPENDENDENT_DIRS); do make clean -C $$dir; done
+	for dir in $(DEPENDENT_DIRS); do make clean -C $$dir; done
 
 $(BIN):
 	$(MD) -p $(BIN)
@@ -46,7 +46,7 @@ $(BIN_O):
 	$(MD) -p $(BIN_O)
 
 $(BIN)$(TARGET): $(OBJECTS)
-	for dir in $(DEPENDENDENT_DIRS); do make -C $$dir; done
+	for dir in $(DEPENDENT_DIRS); do make -C $$dir; done
 	$(CXX) -o $@ $(OBJECTS) $(LFLAGS)
 
 $(BIN_O)%.o: $(SRC)%.c

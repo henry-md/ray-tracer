@@ -1,6 +1,6 @@
-TARGET = Assignment4
-DEPENDENDENT_DIRS = Image Util Ray GL
-SOURCE = main4.cpp
+TARGET = SceneViewer
+DEPENDENT_DIRS = Image Util Ray GL
+SOURCE = scene_viewer.cpp
 
 ifeq ($(OS),Windows_NT)
     detected_OS := Windows
@@ -38,10 +38,16 @@ all: $(BIN)
 all: $(BIN_O)
 all: $(BIN)$(TARGET)
 
+debug: CFLAGS += $(CFLAGS_DEBUG)
+debug: LFLAGS += $(LFLAGS_DEBUG)
+debug: $(BIN)
+debug: $(BIN_O)
+debug: $(BIN)$(TARGET)
+
 clean:
 	rm -f $(BIN)$(TARGET)
 	rm -f $(OBJECTS)
-	for dir in $(DEPENDENDENT_DIRS); do make clean -C $$dir; done
+	for dir in $(DEPENDENT_DIRS); do make clean -C $$dir; done
 
 $(BIN):
 	$(MD) -p $(BIN)
@@ -50,7 +56,7 @@ $(BIN_O):
 	$(MD) -p $(BIN_O)
 
 $(BIN)$(TARGET): $(OBJECTS)
-	for dir in $(DEPENDENDENT_DIRS); do make -C $$dir; done
+	for dir in $(DEPENDENT_DIRS); do make -C $$dir; done
 	$(CXX) -o $@ $(OBJECTS) $(LFLAGS)
 
 $(BIN_O)%.o: $(SRC)%.c

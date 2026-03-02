@@ -1,9 +1,9 @@
 # Run the following to create a jpeg file:
 
-`make -f Makefile2` from root
+`make -f MakefileRayTracer` from root
 - Creates the RayTracer executable
 
-`./RayTracer --in RayFiles/test.ray --out RayFiles/test.jpeg`
+`./RayTracer --in RayFiles/test.ray --out RayFiles/test.jpeg` from root
 - Runs the RayTracer executable on the test.ray file and outputs the result as test.jpeg in the RayFiles directory
 
 

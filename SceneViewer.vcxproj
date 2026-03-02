@@ -19,13 +19,13 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ray_tracer_cli.cpp" />
+    <ClCompile Include="scene_viewer.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{A46361EC-5C6E-4EEB-BD61-07ECED8B8463}</ProjectGuid>
+    <ProjectGuid>{CF9C76A6-C87A-4C7B-8AF2-A8E55EE3F9D5}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>RayTracer</RootNamespace>
+    <RootNamespace>SceneViewer</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -95,7 +95,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NO_OPEN_GL;_CRT_SECURE_NO_WARNINGS;WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>.;</AdditionalIncludeDirectories>
       <WholeProgramOptimization>false</WholeProgramOptimization>
